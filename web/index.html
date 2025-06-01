@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black/0">
+    <div id="app">
+        <div v-if="showStatus" class="weed-info bg-gray-700 rounded-md border border-gray-500">
+            <div class="header w-full flex items-center justify-center flex-col">
+                <div class="header-image border-2 border-blue-500 bg-blue-500/30 rounded-md text-blue-500">
+                    <i class="fa-solid fa-cannabis w-full h-full flex items-center justify-center"></i>
+                </div>
+                <h1 class="seed-label text-white uppercase font-black">{{ label }}</h1>
+            </div>
+            <div class="status w-full flex flex-col">
+                <div class="status-row w-full rounded-md bg-gray-600 gap-1 flex items-center justify-center  ">
+                    <div class="status-image bg-black/20 rounded-md flex items-center justify-center">
+                        <i class="fa-sharp fa-solid fa-plant-wilt text-blue-400"></i>
+                    </div>
+                    <div class="status-info gap-.5 grid">
+                        <p class="label text-white uppercase font-bold">Growth</p>
+                        <div class="progressbar gap-[2px] flex">
+                            <div 
+                                class="bar w-[5px] h-full rounded-md" 
+                                v-for="n in 40" 
+                                :class="['bar', n <= Math.round(status.growth / 2.5) ? 'bg-blue-500' : 'bg-gray-300/40']"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="status-row w-full rounded-md bg-gray-600 gap-1 flex items-center justify-center">
+                    <div class="status-image bg-black/20 rounded-md flex items-center justify-center">
+                        <i class="fa-solid fa-heart-pulse text-blue-400"></i>
+                    </div>
+                    <div class="status-info gap-.5 grid">
+                        <p class="label text-white uppercase font-bold">Health</p>
+                        <div class="progressbar gap-[2px] flex">
+                            <div 
+                                class="bar w-[5px] h-full rounded-md" 
+                                v-for="n in 40" 
+                                :class="['bar', n <= Math.round(status.health / 2.5) ? 'bg-blue-500' : 'bg-gray-300/40']"
+                            ></div>
+                        </div>
+                    </div>
+                    <div class="add bg-black/40 rounded-md flex items-center justify-center opacity-50 hover:opacity-100 text-blue-500" @click="feedPlant('health')">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="status-row w-full rounded-md bg-gray-600 gap-1 flex items-center justify-center">
+                    <div class="status-image bg-black/20 rounded-md flex items-center justify-center">
+                        <i class="fa-solid fa-bottle-water text-blue-400"></i>
+                    </div>
+                    <div class="status-info gap-.5 grid">
+                        <p class="label text-white uppercase font-bold">Water</p>
+                        <div class="progressbar gap-[2px] flex">
+                            <div 
+                                class="bar w-[5px] h-full rounded-md" 
+                                v-for="n in 40" 
+                                :class="['bar', n <= Math.round(status.water / 2.5) ? 'bg-blue-500' : 'bg-gray-300/40']"
+                            ></div>
+                        </div>
+                    </div>
+                    <div class="add bg-black/40 rounded-md flex items-center justify-center opacity-50 hover:opacity-100 text-blue-500" @click="feedPlant('water')">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="status-row w-full rounded-md bg-gray-600 gap-1 flex items-center justify-center">
+                    <div class="status-image bg-black/20 rounded-md flex items-center justify-center">
+                        <i class="fa-solid fa-bag-seedling text-blue-400"></i>
+                    </div>
+                    <div class="status-info gap-.5 grid">
+                        <p class="label text-white uppercase font-bold">Fertilizer</p>
+                        <div class="progressbar gap-[2px] flex">
+                            <div 
+                                class="bar w-[5px] h-full rounded-md" 
+                                v-for="n in 40" 
+                                :class="['bar', n <= Math.round(status.fertilizer / 2.5) ? 'bg-blue-500' : 'bg-gray-300/40']"
+                            ></div>
+                        </div>
+                    </div>
+                    <div class="add bg-black/40 rounded-md flex items-center justify-center opacity-50 hover:opacity-100 text-blue-500" @click="feedPlant('fertilizer')">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons w-full flex flex-wrap">
+                <div class="btn w-full rounded-md gap-2 flex items-center justify-center bg-gray-600 hover:bg-blue-500" @click="harvestPlant">
+                    <div class="btn-image bg-black/20 rounded-md flex items-center justify-center">
+                        <i class="fa-solid fa-scissors text-blue-400"></i>
+                    </div>
+                    <p class="btn-text text-white uppercase font-bold">Harvest</p>
+                </div>
+                <div class="btn w-full rounded-md gap-2 flex items-center justify-center bg-gray-600 hover:bg-blue-500" @click="destroyPlant">
+                    <div class="btn-image bg-black/20 rounded-md flex items-center justify-center">
+                        <i class="fa-sharp fa-solid fa-fire text-blue-400"></i>
+                    </div>
+                    <p class="btn-text text-white uppercase font-bold">Destroy</p>
+                </div>
+                <div class="btn w-full rounded-md gap-2 flex items-center justify-center bg-gray-600 hover:bg-blue-500" @click="carryPlant">
+                    <div class="btn-image bg-black/20 rounded-md flex items-center justify-center">
+                        <i class="fa-solid fa-person-carry-box text-blue-400"></i>
+                    </div>
+                    <p class="btn-text text-white uppercase font-bold">Carry</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

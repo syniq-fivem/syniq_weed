@@ -1,0 +1,66 @@
+{
+    "seedMenu": {
+        "title": "Place Seed",
+        "noSeed": "You don't have any seed to place in a pot",
+        "putSeed": "Click to put seed in the pot"
+    },
+    "shopMenu": {
+        "itemDesc": "Click to purchase item 1x for %s$",
+        "amount": "Amount of %s",
+        "enter": "Enter Amount",
+        "confirmation": "Confirmation",
+        "confirmMessage": "Are you sure you want to buy %s %x for **%s$**"
+    },
+    "progress": {
+        "placeSeed": "Placing Seed...",
+        "sprayPlant": "Spraying Plant...",
+        "fertilizePlant": "Fertilizing Plant...",
+        "waterPlant": "Watering Plant...",
+        "harvestPlant": "Harvesting Plant...",
+        "destroyPlant": "Burning Plant..."
+    },
+    "textUI": {
+        "open": "[E] - Open Plant",
+        "destroy": "[G] - Destroy Plant",
+        "shop": "[E] - Open Shop",
+        "carry": "Carry Plant  \n [ENTER] - Place on ground  \n [BACKSPACE] - Cancel"
+    },
+    "target": {
+        "openMenu": "Open Plant",
+        "destroyPlant": "Destroy Plant",
+        "openShop": "Open Shop"
+    },
+    "notify": {
+        "success": {
+            "title": "Success",
+            "potPlaced": "You have successfully placed the pot",
+            "seedPlaced": "You have successfully placed seed in a pot",
+            "wateredPlant": "You have successfully watered the plant",
+            "fetilizedPlant": "You have successfully fertilized the plant",
+            "sprayedPlant": "You have successfully sprayed the plant",
+            "harvestedPlant": "You harvested a plant and got x%s %s leaves.",
+            "destroyedPlant": "You have successfully destroyed the plant",
+            "itemPurchased": "You have successfully purchased %s for %s$",
+            "plantCarried": "You have successfully moved the plant",
+            "plantFound": "You have successfully copied the id plant",
+            "teleportedPlant": "You have successfully teleported to the plant",
+            "deletedPlant": "You have successfully deleted the plant",
+        },
+        "error": {
+            "title": "Error",
+            "maxPlants": "You have the maximum number of pots placed",
+            "noShovel": "You don't have shovel in your inventory",
+            "maxWater": "Your plant has the maximum amount of water",
+            "noWater": "You don't have destilled water to water the plant",
+            "maxFertilizer": "Your plant has the maximum amount of fertilizer",
+            "noFertilizer": "You don't have fertilizer to fertilize your plant",
+            "maxSpray": "Your plant is sprayed to the maximum",
+            "noSplay": "You don't have spray bottle to spray your plant",
+            "noCanister": "You don't have canister to destroy plant",
+            "noMoney": "You don't have enough money to purchase item",
+            "noPlantNearby": "No plants found nearby",
+            "noPlant": "There is no plant with the id you entered",
+            "cantHarvest": "You can't harvest a plant because it hasn't grown"
+        }
+    }
+}

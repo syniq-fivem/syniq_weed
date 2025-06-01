@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+    user-select: none;
+}
+
+img {
+    width: 100%;
+    -webkit-user-drag: none;
+}
+
+.weed-info {
+    position: fixed;
+    top: 1vw;
+    right: 1vw;
+    width: 19vw !important;
+    height: 31vw !important;
+    padding: 0.5vw;
+}
+
+.weed-info .header {
+    position: relative;
+    height: 7vw !important;
+    gap: 1vw;
+}
+
+.weed-info .header .header-image {
+    width: 3.345vw !important;
+    height: 3.345vw !important;
+    transform: rotate(-45deg);
+}
+
+.weed-info .header .header-image i {
+    transform: rotate(45deg);
+    font-size: 2vw;
+}
+
+.weed-info .header .seed-label {
+    font-size: 1.01vw;
+}
+
+.weed-info .status {
+    height: 14.798vw !important;
+    gap: 1vw;
+}
+
+.weed-info .status .status-row {
+    position: relative;
+    height: 3.131vw !important;
+}
+
+.weed-info .status .status-row .add {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 0.9vw !important;
+    height: 0.9vw !important;
+    transition: 0.3s;
+}
+
+.weed-info .status .status-row .add i {
+    font-size: 0.75vw;
+}
+
+.weed-info .status .status-row .status-image {
+    width: 2.475vw !important;
+    height: 2.475vw !important;
+}
+
+.weed-info .status .status-row .status-image i {
+    font-size: 1.2vw;
+}
+
+.weed-info .status .status-row .status-info {
+    position: relative;
+    width: 14.394vw !important;
+    height: 1.97vw !important;
+}
+
+.weed-info .status .status-row .status-info .progressbar {
+    width: 14.4vw !important;
+    height: 0.859vw !important;
+}
+
+.weed-info .buttons {
+    height: 6.818vw !important;
+    gap: .5vw;
+    margin-top: 1vw;
+}
+
+.weed-info .buttons .btn {
+    height: 3.131vw !important;
+    flex: 1 1 calc(50% - 0.278vw);
+    transition: 0.3s;
+}
+
+.weed-info .buttons .btn:nth-child(3) {
+    flex: 1 1 100%;
+}
+
+.weed-info .buttons .btn .btn-image {
+    position: relative;
+    width: 2.172vw !important;
+    height: 2.172vw !important;
+}
+
+.weed-info .buttons .btn .btn-image i {
+    font-size: 1vw;
+}
+
+.weed-info .status .status-row .status-info .label, .weed-info .buttons .btn .btn-text {
+    font-size: 0.808vw;
+}
+
+.weed-info .header .seed-label, .weed-info .status .status-row .status-info .label, .weed-info .buttons .btn .btn-text {
+    text-shadow: 0 4px 4px #00000040;
+}
