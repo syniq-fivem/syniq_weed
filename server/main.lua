@@ -478,6 +478,6 @@ AddEventHandler('txAdmin:events:serverShuttingDown', function(eventData)
     saveToDB(true)
 end)
 
---[[CreateThread(function()
-    lib.versionCheck('')
-end)]]
+CreateThread(function()
+    lib.versionCheck('syniq-fivem/syniq_weed')
+end)
