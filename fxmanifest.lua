@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 version '1.0.0'
-author 'Taco Development'
+author 'Syniq'
 description 'Advanced Weed Planting'
 
 ui_page 'web/index.html'
