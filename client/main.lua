@@ -454,7 +454,8 @@ function CreateTargetsPlant(Plants)
 end
 
 --########### SHOPS ###########--
-if Config.shop and #Config.shop > 0 then
+if Config.shop and #Config.shop.locations > 0 then
+    local Shops = {}
     local function OpenShop(data)
         local options = {}
 
@@ -505,7 +506,6 @@ if Config.shop and #Config.shop > 0 then
     end
     
     Citizen.CreateThread(function ()
-        local Shops = {}
         for k,v in pairs(Config.shop.locations) do
             if table.type(v.blip) ~= 'empty' then
                 local blip = AddBlipForCoord(v.coords.x, v.coords.y, v.coords.z)
