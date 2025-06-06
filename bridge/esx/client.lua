@@ -29,9 +29,9 @@ AddEventHandler('onResourceStart', function(resource)
 end)
 
 function GetIdentifier()
-    return PlayerData.identifier
+    return PlayerData?.identifier
 end
 
 function GetJob()
-    return PlayerData.job.name
+    return PlayerData?.job?.name
 end
