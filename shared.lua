@@ -9,7 +9,7 @@ Config = {
         spray = 'herbicide',
         canister = 'canister',
     },
-    imagePath = 'nui://ox_inventory/html/images/%s.png',
+    imagePath = 'nui://your_inventory/html/images/%s.png',
     jobs = {
         ['police'] = true,
     },
