@@ -213,7 +213,7 @@ lib.addKeybind({
     name = 'gizmoclose',
     description = 'close gizmo',
     defaultKey = 'RETURN',
-    onPressed = function(self)
+    onReleased = function(self)
         if not gizmoEnabled then return end
         gizmoEnabled = false
     end,
@@ -223,7 +223,7 @@ lib.addKeybind({
     name = 'gizmocanel',
     description = 'cancel gizmo',
     defaultKey = 'BACK',
-    onPressed = function(self)
+    onReleased = function(self)
         if not gizmoEnabled then return end
         canceled = true
         DeleteEntity(currentEntity)
